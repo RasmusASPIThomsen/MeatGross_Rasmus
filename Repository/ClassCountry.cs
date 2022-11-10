@@ -8,6 +8,7 @@ namespace Repository
 {
     public class ClassCountry : ClassNotify
     {
+        // Private Properties
         private int _Id;
         private string _countryName;
         private string _countryCode;
@@ -15,6 +16,7 @@ namespace Repository
         private double _valutaRate;
         private DateTime _updateTime;
 
+        // Constructor
         public ClassCountry()
         {
             Id = 0;
@@ -25,6 +27,7 @@ namespace Repository
             updateTime = DateTime.Now;
         }
 
+        // Overloaded Constructor for at lave en kopi
         public ClassCountry(ClassCountry inCountry)
         {
             Id = inCountry.Id;
@@ -35,6 +38,7 @@ namespace Repository
             updateTime = inCountry.updateTime;
         }
 
+        // Bliver brugt til at holde den rigtige rate for det valgte land
         public double valutaRate
         {
             get { return _valutaRate; }
@@ -47,6 +51,8 @@ namespace Repository
                 Notify("valutaRate");
             }
         }
+
+        // Bliver brugt til at holde den rigtige rate for det valgte land
         public string valutaName
         {
             get { return _valutaName; }
@@ -59,6 +65,8 @@ namespace Repository
                 Notify("valutaName");
             }
         }
+
+        // Bliver brugt til at holde landets lande kode (for exemple: Dk, S, UK) 
         public string countryCode
         {
             get { return _countryCode; }
@@ -71,6 +79,8 @@ namespace Repository
                 Notify("countryCode");
             }
         }
+
+        // Bliver Brugt til at holde landets navn
         public string countryName
         {
             get { return _countryName; }
@@ -83,6 +93,8 @@ namespace Repository
                 Notify("countryName");
             }
         }
+
+        // Bliver brugt til at holde landets id
         public int Id
         {
             get { return _Id; }
@@ -96,6 +108,7 @@ namespace Repository
             }
         }
 
+        // Bliver brugt til at holde hvornår informationen bliver opdateret
         public DateTime updateTime
         {
             get { return _updateTime; }

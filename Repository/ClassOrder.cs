@@ -9,6 +9,7 @@ namespace Repository
 {
     public class ClassOrder : ClassNotify
     {
+        // Public Properties
         private ClassMeat _orderMeat;
         private ClassCustomer _orderCustomer;
         private int _orderWeight;
@@ -18,6 +19,7 @@ namespace Repository
         private string _priceDKK;
         private string _priceValuta;
 
+        // Constructor
         public ClassOrder()
         {
             orderMeat = new ClassMeat();
@@ -30,6 +32,9 @@ namespace Repository
             priceValuta = "0.00";
         }
 
+        //Public Properties
+
+        // Bruges til at holde hvor meget ordneren vejer og bliver brugt på brugegrænsefladen
         public string weight
         {
             get { return _weight; }
@@ -61,6 +66,8 @@ namespace Repository
                 Notify("weight");
             }
         }
+
+        // Bruges til at holde hvor meget ordren koster i egen valuta og bliver brugt på bruger grænsefladen
         public string priceValuta
         {
             get { return _priceValuta; }
@@ -73,6 +80,8 @@ namespace Repository
                 Notify("priceValuta");
             }
         }
+
+        // Bruges til at vise hvor meget ordren koster i DKK og bliver brugt på brugergrænsefladen
         public string priceDKK
         {
             get { return _priceDKK; }
@@ -85,6 +94,8 @@ namespace Repository
                 Notify("priceDKK");
             }
         }
+
+        // Bruges til at holde hvor meget ordren koster i kundens egen valuta og bliver brugt i databasen
         public double orderPriceValuta
         {
             get { return _orderPriceValuta; }
@@ -97,6 +108,8 @@ namespace Repository
                 Notify("orderPriceValuta");
             }
         }
+
+        // Bruges til at holde hvor meget ordren koster i DKK og bliver brugt i databasen
         public double orderPriceDKK
         {
             get { return _orderPriceDKK; }
@@ -109,6 +122,8 @@ namespace Repository
                 Notify("orderPriceDKK");
             }
         }
+
+        // Holder hvor meget ordren vejer og bliver brugt i databasen
         public int orderWeight
         {
             get { return _orderWeight; }
@@ -122,6 +137,8 @@ namespace Repository
                 Notify("orderWeight");
             }
         }
+
+        // Holder hvilken bruger der har lavet ordren og deres information
         public ClassCustomer orderCustomer
         {
             get { return _orderCustomer; }
@@ -135,6 +152,8 @@ namespace Repository
                 Notify("orderCustomer");
             }
         }
+
+        // Holder hvilken kød der er blevet købt og dens information
         public ClassMeat orderMeat
         {
             get { return _orderMeat; }
@@ -149,6 +168,9 @@ namespace Repository
             }
         }
 
+        /// <summary>
+        /// Bruges til at udregne priserne
+        /// </summary>
         public void CalculateAllPrices()
         {
             orderPriceDKK = orderWeight * orderMeat.price;

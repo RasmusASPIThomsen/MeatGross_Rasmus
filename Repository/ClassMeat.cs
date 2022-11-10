@@ -9,6 +9,7 @@ namespace Repository
 {
     public class ClassMeat : ClassNotify
     {
+        // Private Properties
         private int _id;
         private string _typeOfMeat;
         private int _stock;
@@ -18,6 +19,7 @@ namespace Repository
         private DateTime _priceTimeStamp;
         private string _strTimeStamp;
 
+        // Constructor
         public ClassMeat()
         {
             id = 0;
@@ -27,6 +29,8 @@ namespace Repository
             priceTimeStamp = DateTime.Now;
             strTimeStamp = "";
         }
+
+        // Overloaded Constructor til at lave en kopi
         public ClassMeat(ClassMeat inMeat)
         {
             id = inMeat.id;
@@ -38,6 +42,7 @@ namespace Repository
             priceTimeStamp = inMeat.priceTimeStamp;
         }
 
+        // Bruges til at holde hvornår kødet blev opdateret
         public string strTimeStamp
         {
             get { return _strTimeStamp; }
@@ -50,6 +55,8 @@ namespace Repository
                 Notify("strTimeStamp");
             }
         }
+
+        // Bruges til at holde hvornår prisen blev opdateret
         public DateTime priceTimeStamp
         {
             get { return _priceTimeStamp; }
@@ -63,6 +70,8 @@ namespace Repository
                 Notify("priceTimeStamp");
             }
         }
+
+        // Bruges til at holde prisen
         public double price
         {
             get { return _price; }
@@ -75,6 +84,8 @@ namespace Repository
                 Notify("price");
             }
         }
+
+        // Bruges til at holde prisen i string format
         public string strPrice
         {
             get { return _strPrice; }
@@ -99,6 +110,8 @@ namespace Repository
                 Notify("strPrice");
             }
         }
+
+        // Bruges til at holde hvor meget kød der er tilbage
         public int stock
         {
             get { return _stock; }
@@ -111,6 +124,8 @@ namespace Repository
                 Notify("stock");
             }
         }
+
+        // Bruges til at holde kødet i string format
         public string strStock
         {
             get { return _strStock; }
@@ -135,6 +150,8 @@ namespace Repository
                 Notify("strStock");
             }
         }
+
+        // Bruges til at holde hvilken type kød der er
         public string typeOfMeat
         {
             get { return _typeOfMeat; }
@@ -147,6 +164,8 @@ namespace Repository
                 Notify("typeOfMeat");
             }
         }
+
+        // Bruges til at holde kødets id
         public int id
         {
             get { return _id; }

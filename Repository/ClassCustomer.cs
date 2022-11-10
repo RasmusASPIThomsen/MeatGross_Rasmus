@@ -8,6 +8,7 @@ namespace Repository
 {
     public class ClassCustomer : ClassNotify
     {
+        // Private Properties
         private string _companyName;
         private string _address;
         private string _zipCity;
@@ -17,6 +18,7 @@ namespace Repository
         private int _id;
         private ClassCountry _country;
 
+        // Constructor
         public ClassCustomer()
         {
             companyName = "";
@@ -29,6 +31,7 @@ namespace Repository
             country = new ClassCountry();
         }
 
+        // Overloaded Constructor til at lave en kopi
         public ClassCustomer(ClassCustomer inCustomer)
         {
             companyName = inCustomer.companyName;
@@ -41,6 +44,8 @@ namespace Repository
             country = inCustomer.country;
         }
 
+        // Public Properties
+        // holder kundens id
         public int id
         {
             get { return _id; }
@@ -53,6 +58,8 @@ namespace Repository
                 Notify("id");
             }
         }
+
+        // Holder navnet på kundens kontakt person
         public string contactName
         {
             get { return _contactName; }
@@ -65,6 +72,8 @@ namespace Repository
                 Notify("contactName");
             }
         }
+
+        // Holder navnet på kundens email
         public string mail
         {
             get { return _mail; }
@@ -77,6 +86,8 @@ namespace Repository
                 Notify("mail");
             }
         }
+        
+        // Holder navnet på kundens mobil nummer
         public string phone
         {
             get { return _phone; }
@@ -89,6 +100,8 @@ namespace Repository
                 Notify("phone");
             }
         }
+
+        // Holder navnet på kundens zipcode
         public string zipCity
         {
             get { return _zipCity; }
@@ -101,6 +114,8 @@ namespace Repository
                 Notify("zipCity");
             }
         }
+
+        // Holder navnet på kundens addresse 
         public string address
         {
             get { return _address; }
@@ -113,6 +128,8 @@ namespace Repository
                 Notify("address");
             }
         }
+
+        // Holder navnet på kundens navn
         public string companyName
         {
             get { return _companyName; }
@@ -126,6 +143,7 @@ namespace Repository
             }
         }
 
+        // Holder navnet på kundens land
         public ClassCountry country
         {
             get { return _country; }
